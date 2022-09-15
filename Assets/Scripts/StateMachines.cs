@@ -4,15 +4,21 @@ using UnityEngine;
 
 public class StateMachines : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private float speed;
+
+
+    public void OnAnimatorMove(Vector3 direction)
     {
-        
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Ataack()
     {
-        
+        Debug.Log("Attack");
+    }
+
+    public abstract class CharacterStateBase
+    {
+
     }
 }
